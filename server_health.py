@@ -11,7 +11,7 @@ class HealthHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
         # Run health script
-        output = subprocess.getoutput("/home/robo/projects/usage.sh")
+        output = subprocess.getoutput("/app/usage.sh")
 
         # HTML page
         html = f"""
