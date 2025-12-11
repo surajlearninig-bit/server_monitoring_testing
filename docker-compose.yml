@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    # Build settings: Current folder (.) mein Dockerfile dhoondo
+    build: .
+    
+    # Container ka naam (taaki humein aasani se mile)
+    container_name: server_monitor_container
+    
+    # Ports Mapping (Host:Container)
+    ports:
+      - "4000:3000"  # Server 1
+      - "4001:3002"  # Server 2
+      - "4040:8082"  # Python Dashboard
+    
+    # Agar container crash ho, toh auto-restart karo
+    restart: always
